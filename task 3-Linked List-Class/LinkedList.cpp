@@ -6,10 +6,11 @@ struct Node{
 };
 
 class LinkedList {
-    public:
+    private:
         Node* head;
         Node* tail;
-
+    
+    public:
         LinkedList() : head(nullptr), tail(nullptr) {};
 
     
