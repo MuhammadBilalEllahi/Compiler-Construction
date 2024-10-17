@@ -7,3 +7,10 @@ test/*
 task 5 buffer/main2
 task 5 buffer/main
 task 5 buffer/tempCodeRunnerFile.cpp
+.DS_Store
+assignment tasks/dynamic_buffer
+assignment tasks/FA21-BCS-058-LAB1
+assignment tasks/source_code.cpp
+task 5 buffer/source_code.cpp
+task 6 double buffer/double_buffer
+task 6 double buffer/source_code.cpp

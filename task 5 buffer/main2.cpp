@@ -139,7 +139,7 @@ void genToken(char lex[], const char* tokenType) {
 int main() {
     ifstream file("source_code.cpp"); 
     if (!file.is_open()) {
-        cout << "Error opening file!" << endl;
+        cout << "Error opening fiel!" << endl;
         return 1;
     }
 
@@ -153,13 +153,13 @@ int main() {
     
     while (file.read(buffer, sizeof(buffer)) || file.gcount() > 0) {
         int bufferLength = file.gcount(); 
-        cout << klkl++ << "-----. "<< bufferLength << " and "<< sizeof(buffer) << endl ;
+        // cout << klkl++ << "-----. "<< bufferLength << " and "<< sizeof(buffer) << endl ;
 
-        cout << "1- " << file.read(buffer, sizeof(buffer));
-
+        // cout << "1- " << file.read(buffer, sizeof(buffer));
+ 
         while (bi < bufferLength) {
             ch = buffer[bi];
-            cout << "BI" << bi << "+" << endl;
+            // cout << "BI" << bi << "+" << endl;
 
             switch (state) {
                 case 0:
