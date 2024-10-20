@@ -1,3 +1,5 @@
+
+// Using transitiion table
 #include "iostream"
 
 
@@ -16,8 +18,8 @@ enum LexicalUnit {
 
 State | l | d | _ | !{l|d|_} | A | R | T |
  0    | 1 | - | 1 | -        | F | F | N |
- 1    | 1 | 1 | 1 | -        | F | F | N |
- 2    | 1 | - | 1 | -        | F | - | - |
+ 1    | 1 | 1 | 1 | 2        | F | F | N |
+ 2    | - | - | - | -        | T | T | ID |
 // { 
     // {1,-1,1,-1, F,F,N}
     // {1,1,1,2,F,F,N}
@@ -35,8 +37,23 @@ int main(){
 
     while((ch == buffer[bi]) !== EOF){
         if(!TT[state][A]){
-            state = TT[state]
+            state = TT[state][getcharType(ch)];
+            lex[li]= ch;
+            l++;
+        }else{
+            lex[li]='\0';
+            genToken(lex,TT[state][(COL)T]);
+            state=0;
+            li=0;
         }
     }
 
+    // func with return type columns
+    COL getcharType(char ch){
+        if(isLetter(ch)) return L;
+        else if(isDigit(ch)) return D ;
+        else if (ch =='_')return U;
+        else return NLDU;
+    }
 }
+// Solftcode methodology for lexical analysis
